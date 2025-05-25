@@ -36,18 +36,21 @@ a.button:hover {
 
 /* New large_home_button style */
 a.large_home_button {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #28a745;
   color: white;
   padding: 1.25rem 2.5rem;
-  margin: 2rem auto; /* centers horizontally and adds vertical space */
+  margin: 2rem auto;
   border-radius: 12px;
-  width: fit-content; /* keeps button only as wide as needed */
+  width: 300px; /* or any fixed width */
   text-decoration: none;
   font-weight: bold;
   font-size: 1.5rem;
   transition: background-color 0.3s ease;
 }
+
 
 
 a.large_home_button:hover {
