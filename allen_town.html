@@ -1,59 +1,26 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Allen Town - Audio Player</title>
-    <!-- Favicon -->
-    <link rel="icon" href="manufacture_2.png" type="image/png" />
-    <style>
-        body {
-            margin: 0;
-            padding: 2rem;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            color: white;
-            text-align: center;
-        }
-
-        h1 {
-            margin-bottom: 2rem;
-        }
-
-        audio {
-            width: 80%;
-            max-width: 500px;
-            margin-top: 2rem;
-        }
-
-        /* Button styling */
-        .button {
-            display: inline-block;
-            margin-top: 3rem;
-            padding: 0.6rem 1.2rem;
-            font-size: 1.1rem;
-            color: white;
-            background-color: #ff7e5f;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #feb47b;
-            color: #333;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Allen Town - Audio Player</title>
+  <link rel="icon" href="manufacture_2.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Now Playing: Allen Town</h1>
 
-    <audio controls>
-        <source src="Billy Joel - Allentown.wav" type="audio/wav" />
-        Your browser does not support the audio element.
-    </audio>
+  <h1>Now Playing: Allen Town</h1>
 
-    <a class="button" href="index.html">Home</a>
+  <audio controls style="width: 80%; max-width: 500px; margin-top: 2rem;">
+    <source src="Billy Joel - Allentown.wav" type="audio/wav" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Normal button -->
+  <a class="button" href="index.html">Home</a>
+
+  <!-- Large green button -->
+  <a class="large_home_button" href="index.html">Big Home Button</a>
+
 </body>
 </html>

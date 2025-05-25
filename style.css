@@ -33,3 +33,21 @@ a.button {
 a.button:hover {
   background-color: #0056b3;
 }
+
+/* New large_home_button style */
+a.large_home_button {
+  display: inline-block;
+  background-color: #28a745;  /* green */
+  color: white;
+  padding: 1.25rem 2.5rem;
+  margin: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+a.large_home_button:hover {
+  background-color: #1e7e34;
+}
