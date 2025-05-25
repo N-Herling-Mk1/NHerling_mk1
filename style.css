@@ -36,7 +36,7 @@ a.button:hover {
 
 /* New large_home_button style */
 a.large_home_button {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   background-color: #28a745;
