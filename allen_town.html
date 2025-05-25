@@ -1,9 +1,10 @@
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Allen Town - Audio Player</title>
+    <!-- Favicon -->
+    <link rel="icon" href="manufacture_2.png" type="image/png" />
     <style>
         body {
             margin: 0;
@@ -23,16 +24,36 @@
             max-width: 500px;
             margin-top: 2rem;
         }
+
+        /* Button styling */
+        .button {
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 0.6rem 1.2rem;
+            font-size: 1.1rem;
+            color: white;
+            background-color: #ff7e5f;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #feb47b;
+            color: #333;
+        }
     </style>
 </head>
 <body>
-
     <h1>Now Playing: Allen Town</h1>
 
     <audio controls>
-        <source src="Billy Joel - Allentown.wav" type="audio/wav">
+        <source src="Billy Joel - Allentown.wav" type="audio/wav" />
         Your browser does not support the audio element.
     </audio>
 
+    <a class="button" href="index.html">Home</a>
 </body>
 </html>
