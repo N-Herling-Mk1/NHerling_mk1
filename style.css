@@ -41,14 +41,10 @@ a.large_home_button {
   color: white;
   padding: 1.25rem 2.5rem;
   margin: 1rem 0;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.5rem;
-  transition: background-color 0.3s ease;
-  width: 200px !important; /* Force width */
-  box-sizing: border-box; /* Ensure padding doesn’t affect width */
-  border-radius: 8px;
+  position: absolute;
+  border-radius: 12px;
+  top: 50%;
+  left: 50%;
 }
 
 
