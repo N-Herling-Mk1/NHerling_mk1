@@ -35,19 +35,19 @@ a.button:hover {
 }
 
 /* New large_home_button style */
-/* New large_home_button style */
 a.large_home_button {
-  display: block; /* Changed from inline-block to block */
-  background-color: #28a745;  /* green */
+  display: block;
+  background-color: #28a745;
   color: white;
   padding: 1.25rem 2.5rem;
-  margin: 1rem 0; /* Adjust margin so it fits block better */
+  margin: 1rem 0;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.5rem;
   transition: background-color 0.3s ease;
-  width: 200px; /* Set fixed width */
+  width: 200px !important; /* Force width */
+  box-sizing: border-box; /* Ensure padding doesn’t affect width */
 }
 
 
