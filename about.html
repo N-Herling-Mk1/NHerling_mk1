@@ -36,11 +36,23 @@
     <img src="cat_help.png" alt="Cat Help Image" class="under-construction-img">
   </div>
 
-  <!-- Background Music -->
-  <audio autoplay loop>
-    <source src="Spanish Flea-Herb Alpert.wav" type="audio/wav">
-    Your browser does not support the audio element.
-  </audio>
+<!-- Background Music -->
+<audio id="bg-music" autoplay loop>
+  <source src="Spanish Flea-Herb Alpert.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  const audio = document.getElementById('bg-music');
+  const buttons = document.querySelectorAll('.top-buttons a');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      audio.pause();
+      audio.currentTime = 0;
+    });
+  });
+</script>
 
 </body>
 </html>
