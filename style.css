@@ -46,7 +46,7 @@ a.large_home_button {
   border-radius: 12px;
   width: 300px; /* or any fixed width */
   text-decoration: none;
-  font-weight: bold;
+  font-weight: bold;cd
   font-size: 1.5rem;
   transition: background-color 0.3s ease;
 }
@@ -55,4 +55,21 @@ a.large_home_button {
 
 a.large_home_button:hover {
   background-color: #1e7e34;
+}
+
+
+.date-box {
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  padding: 15px;
+  width: fit-content;
+  background-color: #f0f8ff;
+  font-family: sans-serif;
+   margin: 30px auto; /* ← this line centers it horizontally */
+}
+
+/* Additional styles for under-construction content */
+.content img.under-construction-img {
+  max-width: 300px;
+  margin-top: 20px;
 }
