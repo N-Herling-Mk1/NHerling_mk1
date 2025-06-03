@@ -47,9 +47,14 @@
   const buttons = document.querySelectorAll('.top-buttons a');
 
   buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      audio.pause();
-      audio.currentTime = 0;
+    button.addEventListener('click', (event) => {
+      // Only pause audio if the link does NOT open in a new tab
+      const isNewTab = button.target === '_blank' || button.getAttribute('target') === '_blank';
+
+      if (!isNewTab) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
     });
   });
 </script>
