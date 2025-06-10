@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NHerling Mk1</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/images/manufacture_2.png" type="image/png" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="NHerling Mk1" />
+  <meta property="og:description" content="This is my GitHub Pages site." />
+  <meta property="og:image" content="https://n-herling-mk1.github.io/NHerling_mk1/assets/images/alt_image_m2.png" />
+  <meta property="og:image:width" content="200" />
+  <meta property="og:image:height" content="50" />
+  <meta property="og:url" content="https://n-herling-mk1.github.io/NHerling_mk1/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NHerling Mk1" />
+  <meta name="twitter:description" content="This is my GitHub Pages site." />
+  <meta name="twitter:image" content="https://n-herling-mk1.github.io/NHerling_mk1/assets/images/alt_image_m2.png" />
+</head>
+<body>
+
+  <!-- Splash Screen -->
+  <div id="splash">
+    <div id="vbox">
+      <h1 id="loading-text">Loading NHerling Mk1...</h1>
+      <div id="progress-container">
+        <div id="progress-bar"></div>
+      </div>
+      <div id="button-placeholder">
+        <button id="splash-button" style="display: none;">Tap to Continue</button>
+      </div>
+    </div>
+    <audio id="transition-audio" src="assets/audio/muscle_car_power_up.wav"></audio>
+    <canvas id="audio-visualizer"></canvas>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main" style="display: none;">
+    <a class="button" href="about.html">About</a>
+    <a class="button" href="allen_town.html">Allen Town</a>  
+    <a class="button" href="cv.html">Download CV</a>
+    <a class="button" href="pi.html">&pi;</a>
+    <h1>Welcome to NHerling Mk1</h1>
+    <p>This is my GitHub Pages site.</p>
+  </div>
+
+<script>
+window.onload = function() {
+    let progressBar = document.getElementById("progress-bar");
+    let splashButton = document.getElementById("splash-button");
+
+    let progress = 0;
+    let interval = setInterval(() => {
+        progress += 10;
+        progressBar.style.width = progress + "%";
+
+        if (progress >= 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+                splashButton.style.display = "block"; // Appears slightly after full load
+            }, 1000);
+        }
+    }, 500);
+};
+
+document.getElementById("splash-button").addEventListener("click", function() {
+    let audio = document.getElementById("transition-audio");
+    let canvas = document.getElementById("audio-visualizer");
+    let ctx = canvas.getContext("2d");
+
+    let audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    let analyser = audioContext.createAnalyser();
+    let source = audioContext.createMediaElementSource(audio);
+
+    source.connect(analyser);
+    analyser.connect(audioContext.destination);
+
+    analyser.fftSize = 256;
+    let bufferLength = analyser.frequencyBinCount;
+    let dataArray = new Uint8Array(bufferLength);
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+
+        let sliceWidth = canvas.width / bufferLength;
+        let x = 0;
+
+        analyser.getByteFrequencyData(dataArray);
+
+        for (let i = 0; i < bufferLength; i++) {
+            const v = dataArray[i] / 255;
+            const amplitude = (v - 0.5) * 50;
+            const y = canvas.height / 2 + amplitude;
+
+            if (i === 0) {
+                ctx.moveTo(x, y);
+            } else {
+                ctx.lineTo(x, y);
+            }
+
+            x += sliceWidth * 0.75;
+        }
+
+        ctx.strokeStyle = "rgb(100, 255, 100)";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        requestAnimationFrame(draw);
+    }
+
+    audio.play();
+    draw();
+
+    audio.addEventListener("ended", function() {
+        document.getElementById("splash").classList.add("fade-out");
+        setTimeout(() => {
+            document.getElementById("splash").style.display = "none";
+            document.getElementById("main").style.display = "block";
+        }, 500);
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About - NHerling Mk1</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/images/manufacture_2.png" type="image/png">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="About - NHerling Mk1" />
+  <meta property="og:description" content="Learn more about this project." />
+  <meta property="og:image" content="https://n-herling-mk1.github.io/NHerling_mk1/assets/images/load_img.svg" />
+  <meta property="og:url" content="https://n-herling-mk1.github.io/NHerling_mk1/about.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About - NHerling Mk1" />
+  <meta name="twitter:description" content="Learn more about this project." />
+  <meta name="twitter:image" content="https://n-herling-mk1.github.io/NHerling_mk1/assets/images/load_img.svg" />
+</head>
+<body>
+
+<!-- Top Buttons -->
+<div class="top-buttons">
+  <a class="button" href="index.html">Back to Home</a>
+  <a class="button" href="cv.html">Download CV</a>
+  <a class="button" href="allen_town.html">Allen Town</a>
+  <a class="button" href="pi.html">&pi;</a>
+</div>
+
+  <!-- Under Construction Content -->
+  <div class="content">
+    <h1>About This Project</h1>
+    <p>The about page is currently under construction.</p>
+    <p>[turn your speakers on]</p>
+    <img src="assets/images/cat_help.png" alt="Cat Help Image" class="under-construction-img">
+  </div>
+
+<!-- Background Music -->
+<audio id="bg-music" autoplay loop>
+  <source src="assets/audio/Spanish Flea-Herb Alpert.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  const audio = document.getElementById('bg-music');
+  const buttons = document.querySelectorAll('.top-buttons a');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', (event) => {
+      // Only pause audio if the link does NOT open in a new tab
+      const isNewTab = button.target === '_blank' || button.getAttribute('target') === '_blank';
+
+      if (!isNewTab) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
